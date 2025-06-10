@@ -222,6 +222,5 @@ echo "Automation script completed."
 export CURRENT_SERVER="NOT SET"
 echo "$CURRENT_SERVER" > "$CURRENT_SERVER_FILE"
 
-
 #remove the git repository
-rm -rf "$PROJECT_ROOT"
+sudo rm -rf "$PROJECT_ROOT"
