@@ -61,9 +61,8 @@ sudo CSV_FILE="$CSV_FILE" RAPL_FILE="$RAPL_FILE" SAMPLING_INTERVAL_MS="$SAMPLING
 
 echo "Sampling completed. Output saved in $CSV_FILE"
 
-# lancia lo script python plotter.py con il venv "energy" per generare i grafici
+# lancia lo script python plotter.py
 echo "Running plotter.py to generate graphs..."
-source /energy_consumption/energy/bin/activate
 python3 /energy_consumption/plotter.py
 echo "Graphs generated successfully."
 # Deactivate the virtual environment
