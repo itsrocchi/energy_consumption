@@ -1,0 +1,11 @@
+jmeter.log
+jmeter_output_WF.jtl
+jmeter_output_WF_26.jtl
+jmeter_output_OL.jtl
+jmeter_output_OL_2.jtl
+energy_log_WF.txt
+energy_log_WF_27.txt
+energy_log_WF_26.txt
+energy_log_OL.txt
+energy_log_final.txt
+rapl_sampling.csv

@@ -12,37 +12,59 @@ os.makedirs(RESULTS_DIR, exist_ok=True)
 # === LOAD DATA ===
 df = pd.read_csv(CSV_FILE)
 
-# === PLOT ENERGY ===
+# === GET UNIQUE SERVERS, EXCLUDING 'NOT SET' ===
+servers = df['server'].unique()
+servers = [s for s in servers if s != 'NOT SET']
+
+# === COLORS MAP ===
+colors = plt.cm.get_cmap('tab10', len(servers))
+
+# === PLOT ENERGY BY SERVER ===
 plt.figure(figsize=(12, 6))
-plt.plot(df['timestamp_ms'], df['energy_uj'], label='Energy (uJ)')
+for i, server in enumerate(servers):
+    df_server = df[df['server'] == server]
+    plt.plot(df_server['timestamp_ms'], df_server['energy_uj'],
+             label=f'Energy - {server}',
+             color=colors(i))
+
 plt.xlabel('Timestamp (ms)')
 plt.ylabel('Energy (uJ)')
-plt.title('Total Energy Consumption Over Time')
+plt.title('Total Energy Consumption Over Time by Server')
 plt.legend()
 plt.grid(True)
-plt.savefig(os.path.join(RESULTS_DIR, 'energy_plot.png'))
+plt.savefig(os.path.join(RESULTS_DIR, 'energy_plot_by_server.png'))
 plt.close()
 
-# === PLOT DELTA ENERGY ===
+# === PLOT DELTA ENERGY BY SERVER ===
 plt.figure(figsize=(12, 6))
-plt.plot(df['timestamp_ms'], df['delta_energy_uj'], label='Delta Energy (uJ per interval)')
+for i, server in enumerate(servers):
+    df_server = df[df['server'] == server]
+    plt.plot(df_server['timestamp_ms'], df_server['delta_energy_uj'],
+             label=f'Delta Energy - {server}',
+             color=colors(i))
+
 plt.xlabel('Timestamp (ms)')
 plt.ylabel('Delta Energy (uJ)')
-plt.title('Instantaneous Energy Consumption')
+plt.title('Instantaneous Energy Consumption by Server')
 plt.legend()
 plt.grid(True)
-plt.savefig(os.path.join(RESULTS_DIR, 'delta_energy_plot.png'))
+plt.savefig(os.path.join(RESULTS_DIR, 'delta_energy_plot_by_server.png'))
 plt.close()
 
-# === PLOT RAM USAGE ===
+# === PLOT RAM USAGE BY SERVER ===
 plt.figure(figsize=(12, 6))
-plt.plot(df['timestamp_ms'], df['ram_usage_MB'], label='RAM Usage (MB)', color='green')
+for i, server in enumerate(servers):
+    df_server = df[df['server'] == server]
+    plt.plot(df_server['timestamp_ms'], df_server['ram_usage_MB'],
+             label=f'RAM Usage - {server}',
+             color=colors(i))
+
 plt.xlabel('Timestamp (ms)')
 plt.ylabel('RAM Usage (MB)')
-plt.title('RAM Usage Over Time')
+plt.title('RAM Usage Over Time by Server')
 plt.legend()
 plt.grid(True)
-plt.savefig(os.path.join(RESULTS_DIR, 'ram_usage_plot.png'))
+plt.savefig(os.path.join(RESULTS_DIR, 'ram_usage_plot_by_server.png'))
 plt.close()
 
-print("Plot salvati come energy_plot.png, delta_energy_plot.png e ram_usage_plot.png nella cartella ./results")
+print("Plot salvati con distinzione per server (escluso 'NOT SET') nella cartella ./results")

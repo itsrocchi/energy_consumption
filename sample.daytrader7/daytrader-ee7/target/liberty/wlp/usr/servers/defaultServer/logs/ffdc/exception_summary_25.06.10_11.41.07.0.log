@@ -1,0 +1,88 @@
+
+ Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
+------+------+---------------------------+---------------------------+---------------------------
+     0     23   6/10/25 11:41:07:127 CEST   6/10/25 11:41:09:140 CEST java.lang.NoClassDefFoundError org.eclipse.osgi-3.18.300.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.07.0.log
+     1      1   6/10/25 11:41:07:151 CEST   6/10/25 11:41:07:151 CEST java.lang.NoClassDefFoundError com.ibm.ws.ejbcontainer-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.07.1.log
+     2      1   6/10/25 11:41:07:201 CEST   6/10/25 11:41:07:201 CEST java.lang.NoClassDefFoundError com.ibm.ws.logging.osgi-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.07.2.log
+     3      1   6/10/25 11:41:07:213 CEST   6/10/25 11:41:07:213 CEST java.lang.NoClassDefFoundError com.ibm.ws.concurrent.persistent-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.07.3.log
+     4      1   6/10/25 11:41:07:225 CEST   6/10/25 11:41:07:225 CEST java.lang.NoClassDefFoundError com.ibm.ws.ejbcontainer.timer.persistent-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.07.4.log
+     5      1   6/10/25 11:41:08:162 CEST   6/10/25 11:41:08:162 CEST java.lang.NoClassDefFoundError com.ibm.ws.app.manager.module.internal.SimpleDeployedAppInfoBase 665
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.0.log
+     6      1   6/10/25 11:41:08:167 CEST   6/10/25 11:41:08:167 CEST java.lang.NoClassDefFoundError com.ibm.ws.app.manager.ready-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.1.log
+     7      1   6/10/25 11:41:08:183 CEST   6/10/25 11:41:08:183 CEST java.lang.NoClassDefFoundError com.ibm.ws.app.manager.module-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.2.log
+     8      2   6/10/25 11:41:08:198 CEST   6/10/25 11:41:08:914 CEST java.lang.NoClassDefFoundError com.ibm.ws.app.manager.war-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.3.log
+     9      1   6/10/25 11:41:08:280 CEST   6/10/25 11:41:08:280 CEST java.lang.NoClassDefFoundError com.ibm.ws.ejbcontainer.runtime.AbstractEJBRuntime.uninstall 1069
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.4.log
+    10      1   6/10/25 11:41:08:282 CEST   6/10/25 11:41:08:282 CEST java.lang.NoClassDefFoundError com.ibm.ws.org.apache.yoko.corba.spec.1.5-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.5.log
+    11      1   6/10/25 11:41:08:323 CEST   6/10/25 11:41:08:323 CEST com.ibm.ws.exception.RuntimeWarning com.ibm.ws.ejbcontainer.runtime.AbstractEJBRuntime.stop 3059
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.6.log
+    12      1   6/10/25 11:41:08:354 CEST   6/10/25 11:41:08:354 CEST com.ibm.ejs.container.ContainerEJBException com.ibm.ws.ejbcontainer.osgi.internal.EJBRuntimeImpl 1252
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.7.log
+    13      1   6/10/25 11:41:08:533 CEST   6/10/25 11:41:08:533 CEST java.lang.NoClassDefFoundError gateway.bundle.Thread_Context.106-0.0.0 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.8.log
+    14      2   6/10/25 11:41:08:577 CEST   6/10/25 11:41:08:782 CEST java.io.FileNotFoundException com.ibm.ws.classloading.internal.ContainerClassLoader$ArtifactEntryUniversalResource 787
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.9.log
+    15      1   6/10/25 11:41:08:590 CEST   6/10/25 11:41:08:590 CEST java.lang.NoClassDefFoundError com.ibm.ws.artifact.zip-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.10.log
+    16      2   6/10/25 11:41:08:593 CEST   6/10/25 11:41:08:782 CEST java.io.FileNotFoundException com.ibm.ws.classloading.internal.AppClassLoader 535
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.11.log
+    17      1   6/10/25 11:41:08:810 CEST   6/10/25 11:41:08:810 CEST java.lang.NoClassDefFoundError com.ibm.ws.org.apache.yoko.core.1.5-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.12.log
+    18      1   6/10/25 11:41:08:811 CEST   6/10/25 11:41:08:811 CEST java.lang.NoClassDefFoundError com.ibm.ws.transport.iiop-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.13.log
+    19      1   6/10/25 11:41:08:929 CEST   6/10/25 11:41:08:929 CEST java.lang.NoClassDefFoundError com.ibm.ws.cdi.transaction-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.14.log
+    20      1   6/10/25 11:41:08:938 CEST   6/10/25 11:41:08:938 CEST java.lang.NoClassDefFoundError com.ibm.ws.cdi.internal-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.15.log
+    21      1   6/10/25 11:41:08:948 CEST   6/10/25 11:41:08:948 CEST java.lang.NoClassDefFoundError com.ibm.ws.cdi.1.2.web-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.16.log
+    22      1   6/10/25 11:41:08:956 CEST   6/10/25 11:41:08:956 CEST java.lang.NoClassDefFoundError com.ibm.ws.jsf.jsp.shared-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.17.log
+    23      1   6/10/25 11:41:08:966 CEST   6/10/25 11:41:08:966 CEST java.lang.NoClassDefFoundError com.ibm.websphere.javaee.jstl.1.2-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.18.log
+    24      1   6/10/25 11:41:08:978 CEST   6/10/25 11:41:08:978 CEST java.lang.NoClassDefFoundError com.ibm.ws.wsoc.cdi.weld-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.19.log
+    25      1   6/10/25 11:41:08:986 CEST   6/10/25 11:41:08:986 CEST java.lang.NoClassDefFoundError com.ibm.ws.messaging.comms.client-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.20.log
+    26      2   6/10/25 11:41:08:988 CEST   6/10/25 11:41:09:002 CEST java.lang.NoClassDefFoundError com.ibm.ws.wsoc-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.08.21.log
+    27      1   6/10/25 11:41:09:003 CEST   6/10/25 11:41:09:003 CEST java.lang.NoClassDefFoundError com.ibm.ws.wsoc.1.1-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.09.0.log
+    28      1   6/10/25 11:41:09:013 CEST   6/10/25 11:41:09:013 CEST java.lang.NoClassDefFoundError com.ibm.ws.webcontainer.cors-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.09.1.log
+    29      1   6/10/25 11:41:09:023 CEST   6/10/25 11:41:09:023 CEST java.lang.NoClassDefFoundError com.ibm.ws.webserver.plugin.runtime-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.09.2.log
+    30      1   6/10/25 11:41:09:027 CEST   6/10/25 11:41:09:027 CEST java.lang.NoClassDefFoundError com.ibm.ws.messaging.runtime-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.09.3.log
+    31      1   6/10/25 11:41:09:038 CEST   6/10/25 11:41:09:038 CEST java.lang.NoClassDefFoundError com.ibm.ws.jsf.beanvalidation-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.09.4.log
+    32      1   6/10/25 11:41:09:052 CEST   6/10/25 11:41:09:052 CEST java.lang.NoClassDefFoundError com.ibm.ws.webcontainer.servlet.3.1.factories-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.09.5.log
+    33      1   6/10/25 11:41:09:064 CEST   6/10/25 11:41:09:064 CEST java.lang.NoClassDefFoundError com.ibm.ws.app.manager.ejb-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.09.6.log
+    34      1   6/10/25 11:41:09:066 CEST   6/10/25 11:41:09:066 CEST java.lang.NoClassDefFoundError io.openliberty.netty.internal.impl-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.09.7.log
+    35      1   6/10/25 11:41:09:078 CEST   6/10/25 11:41:09:078 CEST java.lang.NoClassDefFoundError com.ibm.ws.ejbcontainer.v32-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.09.8.log
+    36      2   6/10/25 11:41:09:085 CEST   6/10/25 11:41:09:102 CEST java.lang.NoClassDefFoundError com.ibm.ws.channelfw-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.09.9.log
+    37      1   6/10/25 11:41:09:089 CEST   6/10/25 11:41:09:089 CEST java.lang.NoClassDefFoundError com.ibm.ws.javaee.ddmodel-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.09.10.log
+    38      1   6/10/25 11:41:09:102 CEST   6/10/25 11:41:09:102 CEST java.lang.NoClassDefFoundError com.ibm.ws.ejbcontainer.session-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.09.11.log
+    39      1   6/10/25 11:41:09:116 CEST   6/10/25 11:41:09:116 CEST java.lang.NoClassDefFoundError com.ibm.ws.ejbcontainer.timer-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.09.12.log
+    40      1   6/10/25 11:41:09:131 CEST   6/10/25 11:41:09:131 CEST java.lang.NoClassDefFoundError com.ibm.ws.ejbcontainer.async-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.09.13.log
+    41      1   6/10/25 11:41:09:141 CEST   6/10/25 11:41:09:141 CEST java.lang.NoClassDefFoundError com.ibm.ws.ejbcontainer.remote-1.0.81.cl230920230904-1158 log
+                                                                            - /energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_25.06.10_11.41.09.14.log
+------+------+---------------------------+---------------------------+---------------------------

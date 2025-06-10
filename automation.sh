@@ -90,6 +90,10 @@ echo "Fine test WILDFLY 25 - energy_uj: $energyAfter" >> "$ENERGY_LOG_WF"
 delta=$((energyAfter - energyBefore))
 echo "Delta energy_uj: $delta" >> "$ENERGY_LOG_WF"
 
+# === CONFIG ===
+export CURRENT_SERVER="NOT SET"
+echo "$CURRENT_SERVER" > "$CURRENT_SERVER_FILE"
+
 pkill -f standalone
 rm -rf "$WILDFLY_DIR"
 
@@ -131,6 +135,10 @@ echo "Fine test WILDFLY 26 - energy_uj: $energyAfter" >> "$ENERGY_LOG_WF26"
 delta=$((energyAfter - energyBefore))
 echo "Delta energy_uj: $delta" >> "$ENERGY_LOG_WF26"
 
+# === CONFIG ===
+export CURRENT_SERVER="NOT SET"
+echo "$CURRENT_SERVER" > "$CURRENT_SERVER_FILE"
+
 pkill -f standalone
 rm -rf "$WILDFLY_DIR_2"
 
@@ -166,6 +174,10 @@ energyAfter=$(cat "$RAPL_FILE")
 echo "Fine test OPENLIBERTY 25 - energy_uj: $energyAfter" >> "$ENERGY_LOG_OL"
 delta=$((energyAfter - energyBefore))
 echo "Delta energy_uj: $delta" >> "$ENERGY_LOG_OL"
+
+# === CONFIG ===
+export CURRENT_SERVER="NOT SET"
+echo "$CURRENT_SERVER" > "$CURRENT_SERVER_FILE"
 
 pkill -f 'org.codehaus.plexus.classworlds.launcher.Launcher'
 

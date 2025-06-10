@@ -1,0 +1,502 @@
+------Start of DE processing------ = [6/10/25 11:41:08:811 CEST]
+Exception = java.lang.NoClassDefFoundError
+Source = com.ibm.ws.transport.iiop-1.0.81.cl230920230904-1158
+probeid = log
+Stack Dump = java.lang.NoClassDefFoundError: com/ibm/ws/logging/internal/osgi/TrOSGiLogForwarder$1
+	at com.ibm.ws.logging.internal.osgi.TrOSGiLogForwarder.logged(TrOSGiLogForwarder.java:124)
+	at org.eclipse.osgi.internal.log.ExtendedLogReaderServiceFactory.safeLogged(ExtendedLogReaderServiceFactory.java:107)
+	at org.eclipse.osgi.internal.log.ExtendedLogReaderServiceFactory.logPrivileged(ExtendedLogReaderServiceFactory.java:250)
+	at org.eclipse.osgi.internal.log.ExtendedLogReaderServiceFactory.log(ExtendedLogReaderServiceFactory.java:222)
+	at org.eclipse.osgi.internal.log.ExtendedLogServiceFactory.log(ExtendedLogServiceFactory.java:102)
+	at org.eclipse.osgi.internal.log.LoggerImpl.log(LoggerImpl.java:297)
+	at org.eclipse.osgi.internal.log.LoggerImpl.error(LoggerImpl.java:230)
+	at org.eclipse.osgi.internal.log.LoggerImpl.error(LoggerImpl.java:220)
+	at org.apache.felix.scr.impl.logger.ScrLogManager$ScrLoggerFacade.log0(ScrLogManager.java:206)
+	at org.apache.felix.scr.impl.logger.ScrLogManager$ScrLoggerFacade.log(ScrLogManager.java:154)
+	at org.apache.felix.scr.impl.inject.methods.BaseMethod.invoke(BaseMethod.java:535)
+	at org.apache.felix.scr.impl.inject.methods.ActivateMethod.invoke(ActivateMethod.java:317)
+	at org.apache.felix.scr.impl.inject.methods.ActivateMethod.invoke(ActivateMethod.java:307)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.disposeImplementationObject(SingleComponentManager.java:421)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.deleteComponent(SingleComponentManager.java:165)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.doDeactivate(AbstractComponentManager.java:853)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.deactivateInternal(AbstractComponentManager.java:825)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.dispose(AbstractComponentManager.java:589)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.dispose(AbstractComponentManager.java:575)
+	at org.apache.felix.scr.impl.manager.ComponentFactoryImpl$ModifyComponentInstance.dispose(ComponentFactoryImpl.java:170)
+	at com.ibm.ws.transport.iiop.internal.ORBWrapper$ReadyListenerImpl.lambda$updateInstance$0(ORBWrapper.java:101)
+	at com.ibm.ws.transport.iiop.internal.AcidReference.update(AcidReference.java:99)
+	at com.ibm.ws.transport.iiop.internal.ORBWrapper$ReadyListenerImpl.readyChanged(ORBWrapper.java:91)
+	at com.ibm.ws.transport.iiop.spi.SubsystemFactory.unregister(SubsystemFactory.java:29)
+	at com.ibm.ws.transport.iiop.internal.ORBWrapper$ReadyListenerImpl.lambda$unregister$1(ORBWrapper.java:113)
+	at java.util.LinkedHashMap$LinkedKeySet.forEach(LinkedHashMap.java:559)
+	at java.util.Collections$UnmodifiableCollection.forEach(Collections.java:1082)
+	at com.ibm.ws.transport.iiop.internal.ORBWrapper$ReadyListenerImpl.unregister(ORBWrapper.java:113)
+	at com.ibm.ws.transport.iiop.internal.ORBWrapper.deactivate(ORBWrapper.java:68)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.felix.scr.impl.inject.methods.BaseMethod.invokeMethod(BaseMethod.java:245)
+	at org.apache.felix.scr.impl.inject.methods.BaseMethod.access$500(BaseMethod.java:41)
+	at org.apache.felix.scr.impl.inject.methods.BaseMethod$Resolved.invoke(BaseMethod.java:687)
+	at org.apache.felix.scr.impl.inject.methods.BaseMethod.invoke(BaseMethod.java:531)
+	at org.apache.felix.scr.impl.inject.methods.ActivateMethod.invoke(ActivateMethod.java:317)
+	at org.apache.felix.scr.impl.inject.methods.ActivateMethod.invoke(ActivateMethod.java:307)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.disposeImplementationObject(SingleComponentManager.java:421)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.deleteComponent(SingleComponentManager.java:165)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.doDeactivate(AbstractComponentManager.java:853)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.deactivateInternal(AbstractComponentManager.java:825)
+	at org.apache.felix.scr.impl.manager.DependencyManager.deactivateComponentManager(DependencyManager.java:2647)
+	at org.apache.felix.scr.impl.manager.DependencyManager.access$400(DependencyManager.java:59)
+	at org.apache.felix.scr.impl.manager.DependencyManager$MultipleStaticGreedyCustomizer.removedService(DependencyManager.java:573)
+	at org.apache.felix.scr.impl.manager.DependencyManager$MultipleStaticGreedyCustomizer.removedService(DependencyManager.java:492)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerRemoved(ServiceTracker.java:1258)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerRemoved(ServiceTracker.java:1152)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.untrack(ServiceTracker.java:1012)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:1192)
+	at org.apache.felix.scr.impl.BundleComponentActivator$ListenerInfo.serviceChanged(BundleComponentActivator.java:116)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:123)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:961)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:945)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:882)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.unregister(ServiceRegistrationImpl.java:244)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager$3.unregister(AbstractComponentManager.java:952)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager$3.unregister(AbstractComponentManager.java:915)
+	at org.apache.felix.scr.impl.manager.RegistrationManager.changeRegistration(RegistrationManager.java:140)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.unregisterService(AbstractComponentManager.java:994)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.doDeactivate(AbstractComponentManager.java:844)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.deactivateInternal(AbstractComponentManager.java:825)
+	at org.apache.felix.scr.impl.manager.DependencyManager.deactivateComponentManager(DependencyManager.java:2647)
+	at org.apache.felix.scr.impl.manager.DependencyManager.access$400(DependencyManager.java:59)
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.removedService(DependencyManager.java:1367)
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.removedService(DependencyManager.java:1236)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerRemoved(ServiceTracker.java:1258)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerRemoved(ServiceTracker.java:1152)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.untrack(ServiceTracker.java:1012)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:1192)
+	at org.apache.felix.scr.impl.BundleComponentActivator$ListenerInfo.serviceChanged(BundleComponentActivator.java:116)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:123)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:961)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:945)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:882)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.unregister(ServiceRegistrationImpl.java:244)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager$3.unregister(AbstractComponentManager.java:952)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager$3.unregister(AbstractComponentManager.java:915)
+	at org.apache.felix.scr.impl.manager.RegistrationManager.changeRegistration(RegistrationManager.java:140)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.unregisterService(AbstractComponentManager.java:994)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.doDeactivate(AbstractComponentManager.java:844)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.deactivateInternal(AbstractComponentManager.java:825)
+	at org.apache.felix.scr.impl.manager.DependencyManager.deactivateComponentManager(DependencyManager.java:2647)
+	at org.apache.felix.scr.impl.manager.DependencyManager.access$400(DependencyManager.java:59)
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.removedService(DependencyManager.java:1367)
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.removedService(DependencyManager.java:1236)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerRemoved(ServiceTracker.java:1258)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerRemoved(ServiceTracker.java:1152)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.untrack(ServiceTracker.java:1012)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:1192)
+	at org.apache.felix.scr.impl.BundleComponentActivator$ListenerInfo.serviceChanged(BundleComponentActivator.java:116)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:123)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:961)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:945)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:882)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.unregister(ServiceRegistrationImpl.java:244)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager$3.unregister(AbstractComponentManager.java:952)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager$3.unregister(AbstractComponentManager.java:915)
+	at org.apache.felix.scr.impl.manager.RegistrationManager.changeRegistration(RegistrationManager.java:140)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.unregisterService(AbstractComponentManager.java:994)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.doDeactivate(AbstractComponentManager.java:844)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.deactivateInternal(AbstractComponentManager.java:825)
+	at org.apache.felix.scr.impl.manager.DependencyManager.deactivateComponentManager(DependencyManager.java:2647)
+	at org.apache.felix.scr.impl.manager.DependencyManager.access$400(DependencyManager.java:59)
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.removedService(DependencyManager.java:1367)
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.removedService(DependencyManager.java:1236)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerRemoved(ServiceTracker.java:1258)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerRemoved(ServiceTracker.java:1152)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.untrack(ServiceTracker.java:1012)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:1192)
+	at org.apache.felix.scr.impl.BundleComponentActivator$ListenerInfo.serviceChanged(BundleComponentActivator.java:116)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:123)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:961)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:945)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:882)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.unregister(ServiceRegistrationImpl.java:244)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager$3.unregister(AbstractComponentManager.java:952)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager$3.unregister(AbstractComponentManager.java:915)
+	at org.apache.felix.scr.impl.manager.RegistrationManager.changeRegistration(RegistrationManager.java:140)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.unregisterService(AbstractComponentManager.java:994)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.doDeactivate(AbstractComponentManager.java:844)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.deactivateInternal(AbstractComponentManager.java:825)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.dispose(AbstractComponentManager.java:589)
+	at org.apache.felix.scr.impl.manager.ConfigurableComponentHolder.disposeComponents(ConfigurableComponentHolder.java:722)
+	at org.apache.felix.scr.impl.BundleComponentActivator.dispose(BundleComponentActivator.java:492)
+	at org.apache.felix.scr.impl.Activator.disposeComponents(Activator.java:652)
+	at org.apache.felix.scr.impl.Activator.access$300(Activator.java:74)
+	at org.apache.felix.scr.impl.Activator$ScrExtension.destroy(Activator.java:490)
+	at org.apache.felix.scr.impl.AbstractExtender$1.run(AbstractExtender.java:216)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.felix.scr.impl.AbstractExtender.destroyExtension(AbstractExtender.java:238)
+	at org.apache.felix.scr.impl.AbstractExtender.bundleChanged(AbstractExtender.java:132)
+	at org.apache.felix.scr.impl.Activator.bundleChanged(Activator.java:255)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:949)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.osgi.internal.framework.EquinoxEventPublisher.publishBundleEventPrivileged(EquinoxEventPublisher.java:229)
+	at org.eclipse.osgi.internal.framework.EquinoxEventPublisher.publishBundleEvent(EquinoxEventPublisher.java:138)
+	at org.eclipse.osgi.internal.framework.EquinoxEventPublisher.publishBundleEvent(EquinoxEventPublisher.java:130)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor.publishModuleEvent(EquinoxContainerAdaptor.java:217)
+	at org.eclipse.osgi.container.Module.publishEvent(Module.java:499)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:658)
+	at org.eclipse.osgi.container.Module.stop(Module.java:521)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1893)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1768)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:275)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:208)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:660)
+	at org.eclipse.osgi.container.Module.stop(Module.java:521)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:207)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:226)
+	at java.lang.Thread.run(Thread.java:750)
+
+Dump of callerThis
+Object type = org.eclipse.osgi.internal.log.ExtendedLogEntryImpl
+  nextSequenceNumber = 17
+  nextThreadId = 1
+  threadIds = null
+  loggerName = "com.ibm.ws.transport.iiop.internal.ORBWrapperInternal"
+  bundle = class org.eclipse.osgi.internal.framework.EquinoxBundle@5e70e51
+    equinoxContainer = class org.eclipse.osgi.internal.framework.EquinoxContainer@7d1b2721
+      NAME = "org.eclipse.osgi"
+      secureAction = class org.eclipse.osgi.framework.util.SecureAction@7fe974fb
+      connectModules = class org.eclipse.osgi.internal.framework.EquinoxContainer$ConnectModules@1fc94885
+      equinoxConfig = class org.eclipse.osgi.internal.framework.EquinoxConfiguration@25f9ce49
+      logServices = class org.eclipse.osgi.internal.log.EquinoxLogServices@7c5a8ad5
+      storage = class org.eclipse.osgi.storage.Storage@48a06709
+      bootDelegation = class java.util.HashSet@1df893f8
+      bootDelegationStems = class java.lang.String[12]
+      bootDelegateAll = false
+      isProcessClassRecursionSupportedByAll = false
+      eventPublisher = class org.eclipse.osgi.internal.framework.EquinoxEventPublisher@5ebcbdbc
+      monitor = class java.lang.Object@15ef114d
+      bootLoader = class org.eclipse.osgi.internal.framework.EquinoxContainer$1@4c51275b
+      serviceRegistry = class org.eclipse.osgi.internal.serviceregistry.ServiceRegistry@7e171784
+      contextFinder = class org.eclipse.osgi.internal.framework.ContextFinder@43ae5e43
+      signedContentFactory = class org.osgi.util.tracker.ServiceTracker@457d14a7
+      executor = class java.util.concurrent.ScheduledThreadPoolExecutor@2875003c
+      storageSaver = class org.eclipse.osgi.internal.framework.StorageSaver@6d5b9196
+    module = class org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule@373ae6da
+      this$0 = class org.eclipse.osgi.internal.framework.EquinoxBundle@5e70e51
+      ACTIVE_SET = class java.util.RegularEnumSet@403f0fee
+      RESOLVED_SET = class java.util.RegularEnumSet@216fa70b
+      id = 160
+      location = "feature@reference:file:/energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/lib/com.ibm.ws.transport.iiop_1.0.81.jar"
+      revisions = class org.eclipse.osgi.container.ModuleRevisions@56afc75
+      stateChangeLock = class org.eclipse.osgi.internal.container.EquinoxReentrantLock@ee83a81
+      stateTransitionEvents = class java.util.RegularEnumSet@75265665
+      settings = class java.util.RegularEnumSet@6a0c58dd
+      inStart = class java.util.concurrent.atomic.AtomicInteger@385798bd
+      state = class org.eclipse.osgi.container.Module$State@326719c8
+      startlevel = 12
+      lastModified = 1749548261017
+      VALID_RESOLVED_TRANSITION = class java.util.RegularEnumSet@932c0a9
+      VALID_STOPPED_TRANSITION = class java.util.RegularEnumSet@33a7b683
+      $SWITCH_TABLE$org$eclipse$osgi$container$ModuleContainerAdaptor$ModuleEvent = {1,2,3,4,5,6,7,8,9,10} /* array length = 10 */
+    monitor = class java.lang.Object@6d32d0e1
+    context = class org.eclipse.osgi.internal.framework.BundleContextImpl@5ef1d443
+      valid = true
+      bundle = class org.eclipse.osgi.internal.framework.EquinoxBundle@5e70e51
+      container = class org.eclipse.osgi.internal.framework.EquinoxContainer@7d1b2721
+      debug = class org.eclipse.osgi.internal.debug.Debug@11fc814e
+      servicesInUse = class java.util.HashMap@57b40cc2
+      activator = null
+      contextLock = class java.lang.Object@2735825f
+    signedContent = null
+    $SWITCH_TABLE$org$eclipse$osgi$container$Module$State = {1,2,3,4,5,6,7} /* array length = 7 */
+  level = 1
+  logLevelEnum = class org.osgi.service.log.LogLevel@65bbfaa9
+    AUDIT = class org.osgi.service.log.LogLevel@45a07595
+      AUDIT = class org.osgi.service.log.LogLevel@45a07595
+      ERROR = class org.osgi.service.log.LogLevel@65bbfaa9
+      WARN = class org.osgi.service.log.LogLevel@76063b19
+      INFO = class org.osgi.service.log.LogLevel@7ff4a13a
+      DEBUG = class org.osgi.service.log.LogLevel@abaf773
+      TRACE = class org.osgi.service.log.LogLevel@34904b27
+      ENUM$VALUES = class org.osgi.service.log.LogLevel[6]
+      name = "AUDIT"
+      ordinal = 0
+    ERROR = class org.osgi.service.log.LogLevel@65bbfaa9
+    WARN = class org.osgi.service.log.LogLevel@76063b19
+      AUDIT = class org.osgi.service.log.LogLevel@45a07595
+      ERROR = class org.osgi.service.log.LogLevel@65bbfaa9
+      WARN = class org.osgi.service.log.LogLevel@76063b19
+      INFO = class org.osgi.service.log.LogLevel@7ff4a13a
+      DEBUG = class org.osgi.service.log.LogLevel@abaf773
+      TRACE = class org.osgi.service.log.LogLevel@34904b27
+      ENUM$VALUES = class org.osgi.service.log.LogLevel[6]
+      name = "WARN"
+      ordinal = 2
+    INFO = class org.osgi.service.log.LogLevel@7ff4a13a
+      AUDIT = class org.osgi.service.log.LogLevel@45a07595
+      ERROR = class org.osgi.service.log.LogLevel@65bbfaa9
+      WARN = class org.osgi.service.log.LogLevel@76063b19
+      INFO = class org.osgi.service.log.LogLevel@7ff4a13a
+      DEBUG = class org.osgi.service.log.LogLevel@abaf773
+      TRACE = class org.osgi.service.log.LogLevel@34904b27
+      ENUM$VALUES = class org.osgi.service.log.LogLevel[6]
+      name = "INFO"
+      ordinal = 3
+    DEBUG = class org.osgi.service.log.LogLevel@abaf773
+      AUDIT = class org.osgi.service.log.LogLevel@45a07595
+      ERROR = class org.osgi.service.log.LogLevel@65bbfaa9
+      WARN = class org.osgi.service.log.LogLevel@76063b19
+      INFO = class org.osgi.service.log.LogLevel@7ff4a13a
+      DEBUG = class org.osgi.service.log.LogLevel@abaf773
+      TRACE = class org.osgi.service.log.LogLevel@34904b27
+      ENUM$VALUES = class org.osgi.service.log.LogLevel[6]
+      name = "DEBUG"
+      ordinal = 4
+    TRACE = class org.osgi.service.log.LogLevel@34904b27
+      AUDIT = class org.osgi.service.log.LogLevel@45a07595
+      ERROR = class org.osgi.service.log.LogLevel@65bbfaa9
+      WARN = class org.osgi.service.log.LogLevel@76063b19
+      INFO = class org.osgi.service.log.LogLevel@7ff4a13a
+      DEBUG = class org.osgi.service.log.LogLevel@abaf773
+      TRACE = class org.osgi.service.log.LogLevel@34904b27
+      ENUM$VALUES = class org.osgi.service.log.LogLevel[6]
+      name = "TRACE"
+      ordinal = 5
+    ENUM$VALUES = class org.osgi.service.log.LogLevel[6]
+      LogLevel[0] = class org.osgi.service.log.LogLevel@45a07595
+      LogLevel[1] = class org.osgi.service.log.LogLevel@65bbfaa9
+      LogLevel[2] = class org.osgi.service.log.LogLevel@76063b19
+      LogLevel[3] = class org.osgi.service.log.LogLevel@7ff4a13a
+      LogLevel[4] = class org.osgi.service.log.LogLevel@abaf773
+      LogLevel[5] = class org.osgi.service.log.LogLevel@34904b27
+    name = "ERROR"
+    ordinal = 1
+  message = "bundle com.ibm.ws.transport.iiop:1.0.81.cl230920230904-1158 (160)[com.ibm.ws.transport.iiop.internal.ORBWrapperInternal(493)] : The deactivate method has thrown an exception"
+  ref = null
+  throwable = class java.lang.NoClassDefFoundError@1896e02
+    serialVersionUID = 9095859863287012458
+    serialVersionUID = 3579600108157160122
+    serialVersionUID = 4980196508277280342
+    serialVersionUID = -3042686055658047285
+    detailMessage = "org/apache/yoko/orb/OCI/IIOP/Transport_impl"
+    UNASSIGNED_STACK = class java.lang.StackTraceElement[0]
+    cause = class java.lang.ClassNotFoundException@6b24555c
+      serialVersionUID = 9176873029745254542
+      ex = null
+      serialVersionUID = 123456789
+      serialVersionUID = -3387516993124229948
+      serialVersionUID = -3042686055658047285
+      detailMessage = "org.apache.yoko.orb.OCI.IIOP.Transport_impl cannot be found by com.ibm.ws.org.apache.yoko.core.1.5_1.0.81.cl230920230904-1158"
+      UNASSIGNED_STACK = class java.lang.StackTraceElement[0]
+      cause = null
+      stackTrace = class java.lang.StackTraceElement[175]
+      SUPPRESSED_SENTINEL = class java.util.Collections$UnmodifiableRandomAccessList@59e3e2c5
+      suppressedExceptions = class java.util.Collections$UnmodifiableRandomAccessList@59e3e2c5
+      NULL_CAUSE_MESSAGE = "Cannot suppress a null exception."
+      SELF_SUPPRESSION_MESSAGE = "Self-suppression not permitted"
+      CAUSE_CAPTION = "Caused by: "
+      SUPPRESSED_CAPTION = "Suppressed: "
+      EMPTY_THROWABLE_ARRAY = class java.lang.Throwable[0]
+      $assertionsDisabled = true
+    stackTrace = class java.lang.StackTraceElement[170]
+      StackTraceElement[0] = class java.lang.StackTraceElement@77249104
+      StackTraceElement[1] = class java.lang.StackTraceElement@30f674fb
+      StackTraceElement[2] = class java.lang.StackTraceElement@38b40888
+      StackTraceElement[3] = class java.lang.StackTraceElement@3ca2fd53
+      StackTraceElement[4] = class java.lang.StackTraceElement@6f5de772
+      StackTraceElement[5] = class java.lang.StackTraceElement@6c8f17ce
+      StackTraceElement[6] = class java.lang.StackTraceElement@7467b29f
+      StackTraceElement[7] = class java.lang.StackTraceElement@5f048125
+      StackTraceElement[8] = class java.lang.StackTraceElement@5fe28bc0
+      StackTraceElement[9] = class java.lang.StackTraceElement@4b47d695
+      StackTraceElement[10] = class java.lang.StackTraceElement@27d7628
+      StackTraceElement[11] = class java.lang.StackTraceElement@798bd2eb
+      StackTraceElement[12] = class java.lang.StackTraceElement@327cfa91
+      StackTraceElement[13] = class java.lang.StackTraceElement@477a6135
+      StackTraceElement[14] = class java.lang.StackTraceElement@2e5f93c4
+      StackTraceElement[15] = class java.lang.StackTraceElement@9e4106e
+      StackTraceElement[16] = class java.lang.StackTraceElement@5c19cbb1
+      StackTraceElement[17] = class java.lang.StackTraceElement@48fe7ace
+      StackTraceElement[18] = class java.lang.StackTraceElement@1a6d11a6
+      StackTraceElement[19] = class java.lang.StackTraceElement@332305e5
+      StackTraceElement[20] = class java.lang.StackTraceElement@21f51473
+      StackTraceElement[21] = class java.lang.StackTraceElement@1ae63289
+      StackTraceElement[22] = class java.lang.StackTraceElement@68f4f052
+      StackTraceElement[23] = class java.lang.StackTraceElement@4353cc84
+      StackTraceElement[24] = class java.lang.StackTraceElement@4a8c1e11
+      StackTraceElement[25] = class java.lang.StackTraceElement@61d50fb3
+      StackTraceElement[26] = class java.lang.StackTraceElement@2eec05bb
+      StackTraceElement[27] = class java.lang.StackTraceElement@7306cb0e
+      StackTraceElement[28] = class java.lang.StackTraceElement@59d02fe9
+      StackTraceElement[29] = class java.lang.StackTraceElement@10310bf7
+      StackTraceElement[30] = class java.lang.StackTraceElement@5e3e0597
+      StackTraceElement[31] = class java.lang.StackTraceElement@1b25ebe5
+      StackTraceElement[32] = class java.lang.StackTraceElement@43d2200f
+      StackTraceElement[33] = class java.lang.StackTraceElement@5ba4f531
+      StackTraceElement[34] = class java.lang.StackTraceElement@7518516f
+      StackTraceElement[35] = class java.lang.StackTraceElement@4156f6ea
+      StackTraceElement[36] = class java.lang.StackTraceElement@13566497
+      StackTraceElement[37] = class java.lang.StackTraceElement@6f2716b1
+      StackTraceElement[38] = class java.lang.StackTraceElement@5883a113
+      StackTraceElement[39] = class java.lang.StackTraceElement@2e14ed4f
+      StackTraceElement[40] = class java.lang.StackTraceElement@ec646c6
+      StackTraceElement[41] = class java.lang.StackTraceElement@59035b31
+      StackTraceElement[42] = class java.lang.StackTraceElement@1ccdf23b
+      StackTraceElement[43] = class java.lang.StackTraceElement@153a0a78
+      StackTraceElement[44] = class java.lang.StackTraceElement@29768e6f
+      StackTraceElement[45] = class java.lang.StackTraceElement@6a6f92a3
+      StackTraceElement[46] = class java.lang.StackTraceElement@19c0e9ff
+      StackTraceElement[47] = class java.lang.StackTraceElement@5c6c5975
+      StackTraceElement[48] = class java.lang.StackTraceElement@4174a161
+      StackTraceElement[49] = class java.lang.StackTraceElement@5798d966
+      StackTraceElement[50] = class java.lang.StackTraceElement@49894d7b
+      StackTraceElement[51] = class java.lang.StackTraceElement@771002ce
+      StackTraceElement[52] = class java.lang.StackTraceElement@138bcae4
+      StackTraceElement[53] = class java.lang.StackTraceElement@249721a
+      StackTraceElement[54] = class java.lang.StackTraceElement@12815bd
+      StackTraceElement[55] = class java.lang.StackTraceElement@76596124
+      StackTraceElement[56] = class java.lang.StackTraceElement@3bc859e1
+      StackTraceElement[57] = class java.lang.StackTraceElement@72d82520
+      StackTraceElement[58] = class java.lang.StackTraceElement@331c433b
+      StackTraceElement[59] = class java.lang.StackTraceElement@ef1443d
+      StackTraceElement[60] = class java.lang.StackTraceElement@778f1353
+      StackTraceElement[61] = class java.lang.StackTraceElement@444dc9a7
+      StackTraceElement[62] = class java.lang.StackTraceElement@15195f8e
+      StackTraceElement[63] = class java.lang.StackTraceElement@114d21bc
+      StackTraceElement[64] = class java.lang.StackTraceElement@1e57ad4d
+      StackTraceElement[65] = class java.lang.StackTraceElement@347d4fd1
+      StackTraceElement[66] = class java.lang.StackTraceElement@6b4793ff
+      StackTraceElement[67] = class java.lang.StackTraceElement@13ff1fea
+      StackTraceElement[68] = class java.lang.StackTraceElement@30e1f51d
+      StackTraceElement[69] = class java.lang.StackTraceElement@6ebc2717
+      StackTraceElement[70] = class java.lang.StackTraceElement@39338954
+      StackTraceElement[71] = class java.lang.StackTraceElement@5258d1d7
+      StackTraceElement[72] = class java.lang.StackTraceElement@6dae9f9c
+      StackTraceElement[73] = class java.lang.StackTraceElement@622589a1
+      StackTraceElement[74] = class java.lang.StackTraceElement@4779d598
+      StackTraceElement[75] = class java.lang.StackTraceElement@53bb62c9
+      StackTraceElement[76] = class java.lang.StackTraceElement@4af0455d
+      StackTraceElement[77] = class java.lang.StackTraceElement@4d6a523
+      StackTraceElement[78] = class java.lang.StackTraceElement@d8a6534
+      StackTraceElement[79] = class java.lang.StackTraceElement@5aff366
+      StackTraceElement[80] = class java.lang.StackTraceElement@4dbd8423
+      StackTraceElement[81] = class java.lang.StackTraceElement@7cf3df0a
+      StackTraceElement[82] = class java.lang.StackTraceElement@228eb665
+      StackTraceElement[83] = class java.lang.StackTraceElement@58c05591
+      StackTraceElement[84] = class java.lang.StackTraceElement@797d4e36
+      StackTraceElement[85] = class java.lang.StackTraceElement@1b94d59c
+      StackTraceElement[86] = class java.lang.StackTraceElement@4c7e7515
+      StackTraceElement[87] = class java.lang.StackTraceElement@16c8ddd6
+      StackTraceElement[88] = class java.lang.StackTraceElement@5d72dc7
+      StackTraceElement[89] = class java.lang.StackTraceElement@385220d4
+      StackTraceElement[90] = class java.lang.StackTraceElement@7bb3c16
+      StackTraceElement[91] = class java.lang.StackTraceElement@57cd675a
+      StackTraceElement[92] = class java.lang.StackTraceElement@6bc8d171
+      StackTraceElement[93] = class java.lang.StackTraceElement@42b5085c
+      StackTraceElement[94] = class java.lang.StackTraceElement@1cb0d790
+      StackTraceElement[95] = class java.lang.StackTraceElement@20fb94eb
+      StackTraceElement[96] = class java.lang.StackTraceElement@d959adc
+      StackTraceElement[97] = class java.lang.StackTraceElement@678894da
+      StackTraceElement[98] = class java.lang.StackTraceElement@7d1ec3ec
+      StackTraceElement[99] = class java.lang.StackTraceElement@13e4c68
+      StackTraceElement[100] = class java.lang.StackTraceElement@205c65e9
+      StackTraceElement[101] = class java.lang.StackTraceElement@3511b7c
+      StackTraceElement[102] = class java.lang.StackTraceElement@85ba959
+      StackTraceElement[103] = class java.lang.StackTraceElement@7b75e936
+      StackTraceElement[104] = class java.lang.StackTraceElement@3845a89c
+      StackTraceElement[105] = class java.lang.StackTraceElement@33c4ce13
+      StackTraceElement[106] = class java.lang.StackTraceElement@6680a853
+      StackTraceElement[107] = class java.lang.StackTraceElement@32e8d1ec
+      StackTraceElement[108] = class java.lang.StackTraceElement@277c8e65
+      StackTraceElement[109] = class java.lang.StackTraceElement@325d68cf
+      StackTraceElement[110] = class java.lang.StackTraceElement@517c8ce7
+      StackTraceElement[111] = class java.lang.StackTraceElement@25ef5095
+      StackTraceElement[112] = class java.lang.StackTraceElement@6623edeb
+      StackTraceElement[113] = class java.lang.StackTraceElement@3f61eaf0
+      StackTraceElement[114] = class java.lang.StackTraceElement@acf424f
+      StackTraceElement[115] = class java.lang.StackTraceElement@557bc07b
+      StackTraceElement[116] = class java.lang.StackTraceElement@2c4e338a
+      StackTraceElement[117] = class java.lang.StackTraceElement@1c486a99
+      StackTraceElement[118] = class java.lang.StackTraceElement@6c658e65
+      StackTraceElement[119] = class java.lang.StackTraceElement@6796f38a
+      StackTraceElement[120] = class java.lang.StackTraceElement@3a194e91
+      StackTraceElement[121] = class java.lang.StackTraceElement@655af7e9
+      StackTraceElement[122] = class java.lang.StackTraceElement@258c4b81
+      StackTraceElement[123] = class java.lang.StackTraceElement@7556f619
+      StackTraceElement[124] = class java.lang.StackTraceElement@5cb53e4
+      StackTraceElement[125] = class java.lang.StackTraceElement@379c190b
+      StackTraceElement[126] = class java.lang.StackTraceElement@708b8c3a
+      StackTraceElement[127] = class java.lang.StackTraceElement@32af4a0c
+      StackTraceElement[128] = class java.lang.StackTraceElement@6d246bce
+      StackTraceElement[129] = class java.lang.StackTraceElement@3aa76320
+      StackTraceElement[130] = class java.lang.StackTraceElement@16e1d212
+      StackTraceElement[131] = class java.lang.StackTraceElement@5e5615e8
+      StackTraceElement[132] = class java.lang.StackTraceElement@10e26ff7
+      StackTraceElement[133] = class java.lang.StackTraceElement@115db0a8
+      StackTraceElement[134] = class java.lang.StackTraceElement@9b481d3
+      StackTraceElement[135] = class java.lang.StackTraceElement@67233c58
+      StackTraceElement[136] = class java.lang.StackTraceElement@64bd6a9c
+      StackTraceElement[137] = class java.lang.StackTraceElement@18995e53
+      StackTraceElement[138] = class java.lang.StackTraceElement@350efe8a
+      StackTraceElement[139] = class java.lang.StackTraceElement@4b31c58f
+      StackTraceElement[140] = class java.lang.StackTraceElement@44d7bfff
+      StackTraceElement[141] = class java.lang.StackTraceElement@166e0af0
+      StackTraceElement[142] = class java.lang.StackTraceElement@54d65c19
+      StackTraceElement[143] = class java.lang.StackTraceElement@118ef6b1
+      StackTraceElement[144] = class java.lang.StackTraceElement@68df9b38
+      StackTraceElement[145] = class java.lang.StackTraceElement@e802559
+      StackTraceElement[146] = class java.lang.StackTraceElement@68508604
+      StackTraceElement[147] = class java.lang.StackTraceElement@e0ddec1
+      StackTraceElement[148] = class java.lang.StackTraceElement@1a9f9263
+      StackTraceElement[149] = class java.lang.StackTraceElement@153ad684
+      StackTraceElement[150] = class java.lang.StackTraceElement@79361281
+      StackTraceElement[151] = class java.lang.StackTraceElement@192d30b0
+      StackTraceElement[152] = class java.lang.StackTraceElement@7fc7a57c
+      StackTraceElement[153] = class java.lang.StackTraceElement@3c8ad2f6
+      StackTraceElement[154] = class java.lang.StackTraceElement@75e17dfc
+      StackTraceElement[155] = class java.lang.StackTraceElement@5b96b40
+      StackTraceElement[156] = class java.lang.StackTraceElement@4717d2ce
+      StackTraceElement[157] = class java.lang.StackTraceElement@2de0b5b8
+      StackTraceElement[158] = class java.lang.StackTraceElement@53902365
+      StackTraceElement[159] = class java.lang.StackTraceElement@1d3da13c
+      StackTraceElement[160] = class java.lang.StackTraceElement@64c581f7
+      StackTraceElement[161] = class java.lang.StackTraceElement@4ca0b5a2
+      StackTraceElement[162] = class java.lang.StackTraceElement@1ef93c58
+      StackTraceElement[163] = class java.lang.StackTraceElement@6e3d5afa
+      StackTraceElement[164] = class java.lang.StackTraceElement@26bfa4f3
+      StackTraceElement[165] = class java.lang.StackTraceElement@6ffb0823
+      StackTraceElement[166] = class java.lang.StackTraceElement@38b7e278
+      StackTraceElement[167] = class java.lang.StackTraceElement@3cd9851e
+      StackTraceElement[168] = class java.lang.StackTraceElement@679a364a
+      StackTraceElement[169] = class java.lang.StackTraceElement@5097908a
+    SUPPRESSED_SENTINEL = class java.util.Collections$UnmodifiableRandomAccessList@59e3e2c5
+      serialVersionUID = -2542308836966382001
+      serialVersionUID = -283967356065247728
+      list = class java.util.ArrayList@5a2665f2
+      serialVersionUID = 1820017752578914078
+      c = class java.util.ArrayList@5a2665f2
+    suppressedExceptions = class java.util.Collections$UnmodifiableRandomAccessList@59e3e2c5
+    NULL_CAUSE_MESSAGE = "Cannot suppress a null exception."
+    SELF_SUPPRESSION_MESSAGE = "Self-suppression not permitted"
+    CAUSE_CAPTION = "Caused by: "
+    SUPPRESSED_CAPTION = "Suppressed: "
+    EMPTY_THROWABLE_ARRAY = class java.lang.Throwable[0]
+    $assertionsDisabled = true
+  contextObject = null
+  time = 1749548468810
+  threadId = 571
+  threadName = "Framework stop - Equinox Container: 56102241-e01b-4758-82fc-1aa4d027e8c3"
+  sequenceNumber = 16
+  stackTraceElement = null
+

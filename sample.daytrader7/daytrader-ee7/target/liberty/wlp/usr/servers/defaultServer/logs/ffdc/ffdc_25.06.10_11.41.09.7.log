@@ -1,0 +1,264 @@
+------Start of DE processing------ = [6/10/25 11:41:09:066 CEST]
+Exception = java.lang.NoClassDefFoundError
+Source = io.openliberty.netty.internal.impl-1.0.81.cl230920230904-1158
+probeid = log
+Stack Dump = java.lang.NoClassDefFoundError: com/ibm/ws/logging/internal/osgi/TrOSGiLogForwarder$1
+	at com.ibm.ws.logging.internal.osgi.TrOSGiLogForwarder.logged(TrOSGiLogForwarder.java:124)
+	at org.eclipse.osgi.internal.log.ExtendedLogReaderServiceFactory.safeLogged(ExtendedLogReaderServiceFactory.java:107)
+	at org.eclipse.osgi.internal.log.ExtendedLogReaderServiceFactory.logPrivileged(ExtendedLogReaderServiceFactory.java:250)
+	at org.eclipse.osgi.internal.log.ExtendedLogReaderServiceFactory.log(ExtendedLogReaderServiceFactory.java:222)
+	at org.eclipse.osgi.internal.log.ExtendedLogServiceFactory.log(ExtendedLogServiceFactory.java:102)
+	at org.eclipse.osgi.internal.log.LoggerImpl.log(LoggerImpl.java:297)
+	at org.eclipse.osgi.internal.log.LoggerImpl.error(LoggerImpl.java:230)
+	at org.eclipse.osgi.internal.log.LoggerImpl.error(LoggerImpl.java:220)
+	at org.apache.felix.scr.impl.logger.ScrLogManager$ScrLoggerFacade.log0(ScrLogManager.java:206)
+	at org.apache.felix.scr.impl.logger.ScrLogManager$ScrLoggerFacade.log(ScrLogManager.java:154)
+	at org.apache.felix.scr.impl.inject.methods.BaseMethod.invoke(BaseMethod.java:535)
+	at org.apache.felix.scr.impl.inject.methods.ActivateMethod.invoke(ActivateMethod.java:317)
+	at org.apache.felix.scr.impl.inject.methods.ActivateMethod.invoke(ActivateMethod.java:307)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.disposeImplementationObject(SingleComponentManager.java:421)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.deleteComponent(SingleComponentManager.java:165)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.doDeactivate(AbstractComponentManager.java:853)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.deactivateInternal(AbstractComponentManager.java:825)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.dispose(AbstractComponentManager.java:589)
+	at org.apache.felix.scr.impl.manager.ConfigurableComponentHolder.disposeComponents(ConfigurableComponentHolder.java:722)
+	at org.apache.felix.scr.impl.BundleComponentActivator.dispose(BundleComponentActivator.java:492)
+	at org.apache.felix.scr.impl.Activator.disposeComponents(Activator.java:652)
+	at org.apache.felix.scr.impl.Activator.access$300(Activator.java:74)
+	at org.apache.felix.scr.impl.Activator$ScrExtension.destroy(Activator.java:490)
+	at org.apache.felix.scr.impl.AbstractExtender$1.run(AbstractExtender.java:216)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.felix.scr.impl.AbstractExtender.destroyExtension(AbstractExtender.java:238)
+	at org.apache.felix.scr.impl.AbstractExtender.bundleChanged(AbstractExtender.java:132)
+	at org.apache.felix.scr.impl.Activator.bundleChanged(Activator.java:255)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:949)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.osgi.internal.framework.EquinoxEventPublisher.publishBundleEventPrivileged(EquinoxEventPublisher.java:229)
+	at org.eclipse.osgi.internal.framework.EquinoxEventPublisher.publishBundleEvent(EquinoxEventPublisher.java:138)
+	at org.eclipse.osgi.internal.framework.EquinoxEventPublisher.publishBundleEvent(EquinoxEventPublisher.java:130)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor.publishModuleEvent(EquinoxContainerAdaptor.java:217)
+	at org.eclipse.osgi.container.Module.publishEvent(Module.java:499)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:658)
+	at org.eclipse.osgi.container.Module.stop(Module.java:521)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1893)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1768)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:275)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:208)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:660)
+	at org.eclipse.osgi.container.Module.stop(Module.java:521)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:207)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:226)
+	at java.lang.Thread.run(Thread.java:750)
+
+Dump of callerThis
+Object type = org.eclipse.osgi.internal.log.ExtendedLogEntryImpl
+  nextSequenceNumber = 48
+  nextThreadId = 1
+  threadIds = null
+  loggerName = "io.openliberty.netty.internal.impl.NettyFrameworkImpl"
+  bundle = class org.eclipse.osgi.internal.framework.EquinoxBundle@7e04f430
+    equinoxContainer = class org.eclipse.osgi.internal.framework.EquinoxContainer@7d1b2721
+      NAME = "org.eclipse.osgi"
+      secureAction = class org.eclipse.osgi.framework.util.SecureAction@7fe974fb
+      connectModules = class org.eclipse.osgi.internal.framework.EquinoxContainer$ConnectModules@1fc94885
+      equinoxConfig = class org.eclipse.osgi.internal.framework.EquinoxConfiguration@25f9ce49
+      logServices = class org.eclipse.osgi.internal.log.EquinoxLogServices@7c5a8ad5
+      storage = class org.eclipse.osgi.storage.Storage@48a06709
+      bootDelegation = class java.util.HashSet@1df893f8
+      bootDelegationStems = class java.lang.String[12]
+      bootDelegateAll = false
+      isProcessClassRecursionSupportedByAll = false
+      eventPublisher = class org.eclipse.osgi.internal.framework.EquinoxEventPublisher@5ebcbdbc
+      monitor = class java.lang.Object@15ef114d
+      bootLoader = class org.eclipse.osgi.internal.framework.EquinoxContainer$1@4c51275b
+      serviceRegistry = class org.eclipse.osgi.internal.serviceregistry.ServiceRegistry@7e171784
+      contextFinder = class org.eclipse.osgi.internal.framework.ContextFinder@43ae5e43
+      signedContentFactory = class org.osgi.util.tracker.ServiceTracker@457d14a7
+      executor = class java.util.concurrent.ScheduledThreadPoolExecutor@2875003c
+      storageSaver = class org.eclipse.osgi.internal.framework.StorageSaver@6d5b9196
+    module = class org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule@10305e5f
+      this$0 = class org.eclipse.osgi.internal.framework.EquinoxBundle@7e04f430
+      ACTIVE_SET = class java.util.RegularEnumSet@403f0fee
+      RESOLVED_SET = class java.util.RegularEnumSet@216fa70b
+      id = 133
+      location = "feature@reference:file:/energy_consumption/sample.daytrader7/daytrader-ee7/target/liberty/wlp/lib/io.openliberty.netty.internal.impl_1.0.81.jar"
+      revisions = class org.eclipse.osgi.container.ModuleRevisions@127e236f
+      stateChangeLock = class org.eclipse.osgi.internal.container.EquinoxReentrantLock@314e7f84
+      stateTransitionEvents = class java.util.RegularEnumSet@3c1bdb7f
+      settings = class java.util.RegularEnumSet@26b44435
+      inStart = class java.util.concurrent.atomic.AtomicInteger@45327ed7
+      state = class org.eclipse.osgi.container.Module$State@1138f02c
+      startlevel = 12
+      lastModified = 1749548260986
+      VALID_RESOLVED_TRANSITION = class java.util.RegularEnumSet@932c0a9
+      VALID_STOPPED_TRANSITION = class java.util.RegularEnumSet@33a7b683
+      $SWITCH_TABLE$org$eclipse$osgi$container$ModuleContainerAdaptor$ModuleEvent = {1,2,3,4,5,6,7,8,9,10} /* array length = 10 */
+    monitor = class java.lang.Object@67b88569
+    context = class org.eclipse.osgi.internal.framework.BundleContextImpl@144c257e
+      valid = true
+      bundle = class org.eclipse.osgi.internal.framework.EquinoxBundle@7e04f430
+      container = class org.eclipse.osgi.internal.framework.EquinoxContainer@7d1b2721
+      debug = class org.eclipse.osgi.internal.debug.Debug@11fc814e
+      servicesInUse = class java.util.HashMap@2ea05ae7
+      activator = null
+      contextLock = class java.lang.Object@4d5f800a
+    signedContent = null
+    $SWITCH_TABLE$org$eclipse$osgi$container$Module$State = {1,2,3,4,5,6,7} /* array length = 7 */
+  level = 1
+  logLevelEnum = class org.osgi.service.log.LogLevel@65bbfaa9
+    AUDIT = class org.osgi.service.log.LogLevel@45a07595
+      AUDIT = class org.osgi.service.log.LogLevel@45a07595
+      ERROR = class org.osgi.service.log.LogLevel@65bbfaa9
+      WARN = class org.osgi.service.log.LogLevel@76063b19
+      INFO = class org.osgi.service.log.LogLevel@7ff4a13a
+      DEBUG = class org.osgi.service.log.LogLevel@abaf773
+      TRACE = class org.osgi.service.log.LogLevel@34904b27
+      ENUM$VALUES = class org.osgi.service.log.LogLevel[6]
+      name = "AUDIT"
+      ordinal = 0
+    ERROR = class org.osgi.service.log.LogLevel@65bbfaa9
+    WARN = class org.osgi.service.log.LogLevel@76063b19
+      AUDIT = class org.osgi.service.log.LogLevel@45a07595
+      ERROR = class org.osgi.service.log.LogLevel@65bbfaa9
+      WARN = class org.osgi.service.log.LogLevel@76063b19
+      INFO = class org.osgi.service.log.LogLevel@7ff4a13a
+      DEBUG = class org.osgi.service.log.LogLevel@abaf773
+      TRACE = class org.osgi.service.log.LogLevel@34904b27
+      ENUM$VALUES = class org.osgi.service.log.LogLevel[6]
+      name = "WARN"
+      ordinal = 2
+    INFO = class org.osgi.service.log.LogLevel@7ff4a13a
+      AUDIT = class org.osgi.service.log.LogLevel@45a07595
+      ERROR = class org.osgi.service.log.LogLevel@65bbfaa9
+      WARN = class org.osgi.service.log.LogLevel@76063b19
+      INFO = class org.osgi.service.log.LogLevel@7ff4a13a
+      DEBUG = class org.osgi.service.log.LogLevel@abaf773
+      TRACE = class org.osgi.service.log.LogLevel@34904b27
+      ENUM$VALUES = class org.osgi.service.log.LogLevel[6]
+      name = "INFO"
+      ordinal = 3
+    DEBUG = class org.osgi.service.log.LogLevel@abaf773
+      AUDIT = class org.osgi.service.log.LogLevel@45a07595
+      ERROR = class org.osgi.service.log.LogLevel@65bbfaa9
+      WARN = class org.osgi.service.log.LogLevel@76063b19
+      INFO = class org.osgi.service.log.LogLevel@7ff4a13a
+      DEBUG = class org.osgi.service.log.LogLevel@abaf773
+      TRACE = class org.osgi.service.log.LogLevel@34904b27
+      ENUM$VALUES = class org.osgi.service.log.LogLevel[6]
+      name = "DEBUG"
+      ordinal = 4
+    TRACE = class org.osgi.service.log.LogLevel@34904b27
+      AUDIT = class org.osgi.service.log.LogLevel@45a07595
+      ERROR = class org.osgi.service.log.LogLevel@65bbfaa9
+      WARN = class org.osgi.service.log.LogLevel@76063b19
+      INFO = class org.osgi.service.log.LogLevel@7ff4a13a
+      DEBUG = class org.osgi.service.log.LogLevel@abaf773
+      TRACE = class org.osgi.service.log.LogLevel@34904b27
+      ENUM$VALUES = class org.osgi.service.log.LogLevel[6]
+      name = "TRACE"
+      ordinal = 5
+    ENUM$VALUES = class org.osgi.service.log.LogLevel[6]
+      LogLevel[0] = class org.osgi.service.log.LogLevel@45a07595
+      LogLevel[1] = class org.osgi.service.log.LogLevel@65bbfaa9
+      LogLevel[2] = class org.osgi.service.log.LogLevel@76063b19
+      LogLevel[3] = class org.osgi.service.log.LogLevel@7ff4a13a
+      LogLevel[4] = class org.osgi.service.log.LogLevel@abaf773
+      LogLevel[5] = class org.osgi.service.log.LogLevel@34904b27
+    name = "ERROR"
+    ordinal = 1
+  message = "bundle io.openliberty.netty.internal.impl:1.0.81.cl230920230904-1158 (133)[io.openliberty.netty.internal.impl.NettyFrameworkImpl(424)] : The deactivate method has thrown an exception"
+  ref = null
+  throwable = class java.lang.NoClassDefFoundError@436e82bb
+    serialVersionUID = 9095859863287012458
+    serialVersionUID = 3579600108157160122
+    serialVersionUID = 4980196508277280342
+    serialVersionUID = -3042686055658047285
+    detailMessage = "com/ibm/ws/channelfw/internal/chains/EndPointMgrImpl"
+    UNASSIGNED_STACK = class java.lang.StackTraceElement[0]
+    cause = class java.lang.ClassNotFoundException@2b133b99
+      serialVersionUID = 9176873029745254542
+      ex = null
+      serialVersionUID = 123456789
+      serialVersionUID = -3387516993124229948
+      serialVersionUID = -3042686055658047285
+      detailMessage = "com.ibm.ws.channelfw.internal.chains.EndPointMgrImpl cannot be found by io.openliberty.netty.internal.impl_1.0.81.cl230920230904-1158"
+      UNASSIGNED_STACK = class java.lang.StackTraceElement[0]
+      cause = null
+      stackTrace = class java.lang.StackTraceElement[51]
+      SUPPRESSED_SENTINEL = class java.util.Collections$UnmodifiableRandomAccessList@59e3e2c5
+      suppressedExceptions = class java.util.Collections$UnmodifiableRandomAccessList@59e3e2c5
+      NULL_CAUSE_MESSAGE = "Cannot suppress a null exception."
+      SELF_SUPPRESSION_MESSAGE = "Self-suppression not permitted"
+      CAUSE_CAPTION = "Caused by: "
+      SUPPRESSED_CAPTION = "Suppressed: "
+      EMPTY_THROWABLE_ARRAY = class java.lang.Throwable[0]
+      $assertionsDisabled = true
+    stackTrace = class java.lang.StackTraceElement[46]
+      StackTraceElement[0] = class java.lang.StackTraceElement@7428baa
+      StackTraceElement[1] = class java.lang.StackTraceElement@65e0681e
+      StackTraceElement[2] = class java.lang.StackTraceElement@61f11d7b
+      StackTraceElement[3] = class java.lang.StackTraceElement@37630354
+      StackTraceElement[4] = class java.lang.StackTraceElement@246fd1c9
+      StackTraceElement[5] = class java.lang.StackTraceElement@42a9fdc2
+      StackTraceElement[6] = class java.lang.StackTraceElement@2bda3a29
+      StackTraceElement[7] = class java.lang.StackTraceElement@40cf5a5
+      StackTraceElement[8] = class java.lang.StackTraceElement@5e378d74
+      StackTraceElement[9] = class java.lang.StackTraceElement@53fd3c9d
+      StackTraceElement[10] = class java.lang.StackTraceElement@298c4fb9
+      StackTraceElement[11] = class java.lang.StackTraceElement@4a4e36f0
+      StackTraceElement[12] = class java.lang.StackTraceElement@28704ee0
+      StackTraceElement[13] = class java.lang.StackTraceElement@12d386a7
+      StackTraceElement[14] = class java.lang.StackTraceElement@5969e2c3
+      StackTraceElement[15] = class java.lang.StackTraceElement@62abb6a8
+      StackTraceElement[16] = class java.lang.StackTraceElement@4806e353
+      StackTraceElement[17] = class java.lang.StackTraceElement@46eeb24a
+      StackTraceElement[18] = class java.lang.StackTraceElement@50073fae
+      StackTraceElement[19] = class java.lang.StackTraceElement@6fa6cdf0
+      StackTraceElement[20] = class java.lang.StackTraceElement@10c5a72c
+      StackTraceElement[21] = class java.lang.StackTraceElement@238a3b9c
+      StackTraceElement[22] = class java.lang.StackTraceElement@4a998a0c
+      StackTraceElement[23] = class java.lang.StackTraceElement@130917e2
+      StackTraceElement[24] = class java.lang.StackTraceElement@2ec83e68
+      StackTraceElement[25] = class java.lang.StackTraceElement@5ceca6f6
+      StackTraceElement[26] = class java.lang.StackTraceElement@5a239e8d
+      StackTraceElement[27] = class java.lang.StackTraceElement@14e342c
+      StackTraceElement[28] = class java.lang.StackTraceElement@6e9a7113
+      StackTraceElement[29] = class java.lang.StackTraceElement@57f8a120
+      StackTraceElement[30] = class java.lang.StackTraceElement@11e98aa4
+      StackTraceElement[31] = class java.lang.StackTraceElement@617623e1
+      StackTraceElement[32] = class java.lang.StackTraceElement@5c59c435
+      StackTraceElement[33] = class java.lang.StackTraceElement@4e3a8f3f
+      StackTraceElement[34] = class java.lang.StackTraceElement@135b90f6
+      StackTraceElement[35] = class java.lang.StackTraceElement@4362c057
+      StackTraceElement[36] = class java.lang.StackTraceElement@5108cc62
+      StackTraceElement[37] = class java.lang.StackTraceElement@4bd1e20b
+      StackTraceElement[38] = class java.lang.StackTraceElement@44217a7
+      StackTraceElement[39] = class java.lang.StackTraceElement@51f70f00
+      StackTraceElement[40] = class java.lang.StackTraceElement@460ba280
+      StackTraceElement[41] = class java.lang.StackTraceElement@20ed1f0
+      StackTraceElement[42] = class java.lang.StackTraceElement@16e51139
+      StackTraceElement[43] = class java.lang.StackTraceElement@7f0383ea
+      StackTraceElement[44] = class java.lang.StackTraceElement@64072128
+      StackTraceElement[45] = class java.lang.StackTraceElement@1072ed09
+    SUPPRESSED_SENTINEL = class java.util.Collections$UnmodifiableRandomAccessList@59e3e2c5
+      serialVersionUID = -2542308836966382001
+      serialVersionUID = -283967356065247728
+      list = class java.util.ArrayList@5a2665f2
+      serialVersionUID = 1820017752578914078
+      c = class java.util.ArrayList@5a2665f2
+    suppressedExceptions = class java.util.Collections$UnmodifiableRandomAccessList@59e3e2c5
+    NULL_CAUSE_MESSAGE = "Cannot suppress a null exception."
+    SELF_SUPPRESSION_MESSAGE = "Self-suppression not permitted"
+    CAUSE_CAPTION = "Caused by: "
+    SUPPRESSED_CAPTION = "Suppressed: "
+    EMPTY_THROWABLE_ARRAY = class java.lang.Throwable[0]
+    $assertionsDisabled = true
+  contextObject = null
+  time = 1749548469065
+  threadId = 571
+  threadName = "Framework stop - Equinox Container: 56102241-e01b-4758-82fc-1aa4d027e8c3"
+  sequenceNumber = 47
+  stackTraceElement = null
+

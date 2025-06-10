@@ -65,5 +65,3 @@ echo "Sampling completed. Output saved in $CSV_FILE"
 echo "Running plotter.py to generate graphs..."
 python3 /energy_consumption/plotter.py
 echo "Graphs generated successfully."
-# Deactivate the virtual environment
-deactivate
