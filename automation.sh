@@ -9,13 +9,20 @@ echo "$CURRENT_SERVER" > "$CURRENT_SERVER_FILE"
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BASE_DIR="$SCRIPT_DIR"
 
-WILDFLY_URL="https://github.com/wildfly/wildfly/releases/download/25.0.1.Final/wildfly-25.0.1.Final.zip"
-WILDFLY_ZIP="wildfly-25.0.1.Final.zip"
-WILDFLY_DIR="wildfly-25.0.1.Final"
+# === WILDFLY CONFIGURATION ===
 
-WILDFLY_URL_2="https://github.com/wildfly/wildfly/releases/download/26.0.1.Final/wildfly-26.0.1.Final.zip"
-WILDFLY_ZIP_2="wildfly-26.0.1.Final.zip"
-WILDFLY_DIR_2="wildfly-26.0.1.Final"
+# Mappa di versioni -> nome zip
+declare -A WILDFLY_VERSIONS=(
+    ["WF25"]="25.0.1.Final"
+    ["WF26"]="26.0.1.Final"
+)
+
+# Funzione per costruire lo URL
+get_wildfly_url() {
+    local version=$1
+    echo "https://github.com/wildfly/wildfly/releases/download/$version/wildfly-$version.zip"
+}
+
 
 DAYTRADER_EE7_URL="https://github.com/WASdev/sample.daytrader7"
 PROJECT_ROOT="$BASE_DIR/sample.daytrader7"
@@ -43,22 +50,60 @@ FINAL_LOG="$BASE_DIR/energy_log_final.txt"
 POM_25="$BASE_DIR/poms_openliberty/pom_original.xml"
 POM_23="$BASE_DIR/poms_openliberty/pom_v2.xml"
 
-# === STEP 1. WildFly 25 ===
+run_wildfly_test() {
+    local key=$1
+    local version="${WILDFLY_VERSIONS[$key]}"
+    local zip_file="wildfly-$version.zip"
+    local dir_name="wildfly-$version"
+    local url
+    url=$(get_wildfly_url "$version")
+    local log_file="$BASE_DIR/energy_log_WF${key}.txt"
+    local jmeter_output="jmeter_output_WF_${key}.jtl"
 
-if [ ! -d "$WILDFLY_DIR" ]; then
-    wget "$WILDFLY_URL"
-    unzip "$WILDFLY_ZIP"
-    rm "$WILDFLY_ZIP"
-fi
-chmod 777 "$WILDFLY_DIR"
+    if [ ! -d "$dir_name" ]; then
+        echo "Scarico WildFly $version..."
+        wget "$url" -O "$zip_file"
+        unzip "$zip_file"
+        rm "$zip_file"
+    fi
+    chmod -R 777 "$dir_name"
 
-echo "Replacing standalone.xml for WildFly 25..."
-cp "$STANDALONE_XML" "$WILDFLY_DIR/standalone/configuration/standalone.xml"
+    echo "Replacing standalone.xml for WildFly $version..."
+    cp "$STANDALONE_XML" "$dir_name/standalone/configuration/standalone.xml"
 
-echo "Copying EAR for WildFly 25..."
-cp "$EAR_FILE" "$WILDFLY_DIR/standalone/deployments/"
+    echo "Copying EAR for WildFly $version..."
+    cp "$EAR_FILE" "$dir_name/standalone/deployments/"
 
-cp -r modules/com "$WILDFLY_DIR/modules/"
+    cp -r modules/com "$dir_name/modules/"
+
+    export CURRENT_SERVER="WildFly $version"
+    echo "$CURRENT_SERVER" > "$CURRENT_SERVER_FILE"
+
+    "$dir_name/bin/standalone.sh" &
+
+    echo "Waiting for WildFly $version to start..."
+    sleep 30
+
+    energyBefore=$(cat "$RAPL_FILE")
+    echo "Inizio test WildFly $version - energy_uj: $energyBefore" > "$log_file"
+
+    rm -f "$jmeter_output"
+    touch "$jmeter_output"
+
+    "$JMETER_BIN" -n -t "$JMETER_WF" -l "$jmeter_output"
+
+    energyAfter=$(cat "$RAPL_FILE")
+    echo "Fine test WildFly $version - energy_uj: $energyAfter" >> "$log_file"
+    delta=$((energyAfter - energyBefore))
+    echo "Delta energy_uj: $delta" >> "$log_file"
+
+    export CURRENT_SERVER="NOT SET"
+    echo "$CURRENT_SERVER" > "$CURRENT_SERVER_FILE"
+
+    pkill -f standalone
+    rm -rf "$dir_name"
+}
+
 
 # Avvia MySQL
 sudo systemctl start mysql
@@ -67,80 +112,19 @@ if ! systemctl is-active --quiet mysql; then
     exit 1
 fi
 
-# Avvia WildFly 25
-export CURRENT_SERVER="WildFly 25"
-echo "$CURRENT_SERVER" > "$CURRENT_SERVER_FILE"
+# === ESECUZIONE TEST WILDFLY MULTIVERSIONE ===
 
-"$WILDFLY_DIR/bin/standalone.sh" &
-
-echo "Waiting for WildFly 25 to start..."
-sleep 30
-
-# JMeter WildFly 25
-energyBefore=$(cat "$RAPL_FILE")
-echo "Inizio test WILDFLY 25 - energy_uj: $energyBefore" > "$ENERGY_LOG_WF"
-
-rm -f jmeter_output_WF.jtl
-touch jmeter_output_WF.jtl
-
-"$JMETER_BIN" -n -t "$JMETER_WF" -l jmeter_output_WF.jtl
-
-energyAfter=$(cat "$RAPL_FILE")
-echo "Fine test WILDFLY 25 - energy_uj: $energyAfter" >> "$ENERGY_LOG_WF"
-delta=$((energyAfter - energyBefore))
-echo "Delta energy_uj: $delta" >> "$ENERGY_LOG_WF"
-
-# === CONFIG ===
-export CURRENT_SERVER="NOT SET"
-echo "$CURRENT_SERVER" > "$CURRENT_SERVER_FILE"
-
-pkill -f standalone
-rm -rf "$WILDFLY_DIR"
-
-# === STEP 2. WildFly 26 ===
-
-if [ ! -d "$WILDFLY_DIR_2" ]; then
-    wget "$WILDFLY_URL_2"
-    unzip "$WILDFLY_ZIP_2"
-    rm "$WILDFLY_ZIP_2"
+# Avvia MySQL prima dei test WildFly
+sudo systemctl start mysql
+if ! systemctl is-active --quiet mysql; then
+    echo "MySQL failed to start."
+    exit 1
 fi
-chmod 777 "$WILDFLY_DIR_2"
 
-echo "Replacing standalone.xml for WildFly 26..."
-cp "$STANDALONE_XML" "$WILDFLY_DIR_2/standalone/configuration/standalone.xml"
+# Esegui test per ogni versione
+run_wildfly_test "WF25"
+run_wildfly_test "WF26"
 
-echo "Copying EAR for WildFly 26..."
-cp "$EAR_FILE" "$WILDFLY_DIR_2/standalone/deployments/"
-
-cp -r modules/com "$WILDFLY_DIR_2/modules/"
-
-export CURRENT_SERVER="WildFly 26"
-echo "$CURRENT_SERVER" > "$CURRENT_SERVER_FILE"
-
-"$WILDFLY_DIR_2/bin/standalone.sh" &
-
-echo "Waiting for WildFly 26 to start..."
-sleep 30
-
-energyBefore=$(cat "$RAPL_FILE")
-echo "Inizio test WILDFLY 26 - energy_uj: $energyBefore" > "$ENERGY_LOG_WF26"
-
-rm -f jmeter_output_WF_26.jtl
-touch jmeter_output_WF_26.jtl
-
-"$JMETER_BIN" -n -t "$JMETER_WF" -l jmeter_output_WF_26.jtl
-
-energyAfter=$(cat "$RAPL_FILE")
-echo "Fine test WILDFLY 26 - energy_uj: $energyAfter" >> "$ENERGY_LOG_WF26"
-delta=$((energyAfter - energyBefore))
-echo "Delta energy_uj: $delta" >> "$ENERGY_LOG_WF26"
-
-# === CONFIG ===
-export CURRENT_SERVER="NOT SET"
-echo "$CURRENT_SERVER" > "$CURRENT_SERVER_FILE"
-
-pkill -f standalone
-rm -rf "$WILDFLY_DIR_2"
 
 # === STEP 3. Open Liberty v1 ===
 
@@ -149,7 +133,7 @@ if [ ! -d "$PROJECT_ROOT" ]; then
 fi
 
 echo "Copying pom_original.xml..."
-cp "$POM_25" "$DAYTRADER_EE7/pom.xml"
+cp "$POM_23" "$DAYTRADER_EE7/pom.xml"
 
 cd "$PROJECT_ROOT"
 mvn clean install -DskipTests
@@ -158,7 +142,7 @@ cd "$DAYTRADER_EE7"
 export CURRENT_SERVER="OpenLiberty 25"
 echo "$CURRENT_SERVER" > "$CURRENT_SERVER_FILE"
 
-mvn liberty:run &
+mvn liberty:run -Dopenliberty.runtime.version=25.0.0.5 &
 
 sleep 30
 
@@ -180,6 +164,8 @@ export CURRENT_SERVER="NOT SET"
 echo "$CURRENT_SERVER" > "$CURRENT_SERVER_FILE"
 
 pkill -f 'org.codehaus.plexus.classworlds.launcher.Launcher'
+rm -rf "$DAYTRADER_EE7/target/liberty/wlp"
+
 
 # === STEP 4. Open Liberty v2 ===
 
@@ -193,7 +179,7 @@ cd "$DAYTRADER_EE7"
 export CURRENT_SERVER="OpenLiberty 23"
 echo "$CURRENT_SERVER" > "$CURRENT_SERVER_FILE"
 
-mvn liberty:run &
+mvn liberty:run -Dopenliberty.runtime.version=23.0.0.10 &
 
 sleep 30
 
@@ -223,4 +209,11 @@ export CURRENT_SERVER="NOT SET"
 echo "$CURRENT_SERVER" > "$CURRENT_SERVER_FILE"
 
 #remove the git repository
-sudo rm -rf "$PROJECT_ROOT"
+echo "Rimozione di: $PROJECT_ROOT"
+if [ -d "$PROJECT_ROOT" ]; then
+    sudo rm -rf "$PROJECT_ROOT"
+    echo "Rimosso con successo"
+else
+    echo "Directory non trovata: $PROJECT_ROOT"
+fi
+

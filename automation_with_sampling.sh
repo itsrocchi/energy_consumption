@@ -5,7 +5,7 @@ umask 000
 RAPL_FILE="/sys/devices/virtual/powercap/intel-rapl/intel-rapl:0/energy_uj"
 SAMPLING_INTERVAL_MS=100  # intervallo in millisecondi
 CSV_FILE="/energy_consumption/rapl_sampling.csv"  # esempio di path universale
-AUTOMATION_SCRIPT="/energy_consumption/automation.sh"
+AUTOMATION_SCRIPT="/energy_consumption/automation_update.sh"
 CURRENT_SERVER_FILE="/tmp/current_server.txt"
 
 # === FUNZIONE PER LEGGERE RAM USAGE ===

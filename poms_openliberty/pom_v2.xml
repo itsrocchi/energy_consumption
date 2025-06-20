@@ -61,12 +61,12 @@
                <artifactId>liberty-maven-plugin</artifactId>
                <version>3.9</version>
                <configuration>
-                  <runtimeArtifact>
-                        <groupId>io.openliberty.beta</groupId>
-                        <artifactId>openliberty-runtime</artifactId>
-                        <version>23.0.0.10-beta</version>
-                        <type>zip</type>
-                  </runtimeArtifact>
+                 <runtimeArtifact>
+                     <groupId>io.openliberty</groupId>
+                     <artifactId>openliberty-runtime</artifactId>
+                     <version>${openliberty.runtime.version}</version>
+                     <type>zip</type>
+                 </runtimeArtifact>
                </configuration>
             </plugin>
          <plugin>

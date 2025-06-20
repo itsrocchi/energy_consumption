@@ -9,3 +9,14 @@ energy_log_WF_26.txt
 energy_log_OL.txt
 energy_log_final.txt
 rapl_sampling.csv
+energy_log_WF26.csv
+energy_log_WF27.csv
+energy_log_WF25.txt
+energy_log_WFWF25.txt
+energy_log_WFWF26.txt
+jmeter_output_WF_25.jtl
+jmeter_output_WF_WF25.jtl
+wget-log
+jmeter_output_WF_WF26.jtl
+jmeter_output_WF_WF27.jtl
+energy_log_WFWF27.txt
